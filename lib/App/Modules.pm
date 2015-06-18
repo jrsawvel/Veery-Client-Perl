@@ -1,0 +1,11 @@
+package Modules;
+use strict;
+use warnings;
+use diagnostics;
+use CGI;
+use CGI::Carp qw(fatalsToBrowser);
+use App::Config;
+use App::Page;
+use App::User;
+use App::Utils;
+1;

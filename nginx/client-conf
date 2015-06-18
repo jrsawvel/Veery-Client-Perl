@@ -1,0 +1,63 @@
+########
+# SCAUP
+########
+
+server {
+	listen   80; 
+
+	server_name veeryclientperl.soupmode.com;
+
+        location ~ ^/(css/|javascript/|images/) {
+	     root /home/veery/Veery-Client-Perl/root;
+             access_log off;
+             expires max;
+        }
+
+        set $use_cache 1;
+        set $post_id 0;
+        if ($request_method = "POST" ) {
+            set $use_cache 0;
+        }
+        if ($request_method = "PUT" ) {
+            set $use_cache 0;
+        }
+#        if ($http_cookie ~* "veerysession_id=[\w]+") {
+#            set $use_cache 0;
+#        }
+        if ($http_cookie ~* "veeryauthor_name=JohnR") {
+            set $use_cache 0;
+        }
+        if ($request_uri ~ "^/([\w-]+)") {
+            set $post_id $1;
+            set $use_cache "${use_cache}1";
+        }
+        if ($request_uri ~ "^/$") {
+            set $post_id "homepage";
+            set $use_cache "${use_cache}1";
+        }
+
+        location / {
+             # deny 108.73.171.0/24;
+
+             default_type text/html;
+             if ( $use_cache = 11 ) {
+                 set $memcached_key "veeryclientperl.soupmode.com-$post_id";
+                 memcached_pass 127.0.0.1:11211;
+             }
+             error_page 404 = @fallback;
+#             error_page 405 = @fallback;
+        }
+
+        location @fallback {
+	     root /home/veery/Veery-Client-Perl/root;
+             index veeryclient.pl;
+             rewrite  ^/(.*)$ /veeryclient.pl?query=$1 break;
+             fastcgi_pass  127.0.0.1:8999;
+             fastcgi_index veeryclient.pl;
+             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+             include fastcgi_params;
+        }
+}
+
+
+

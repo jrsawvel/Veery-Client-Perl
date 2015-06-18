@@ -1,0 +1,32 @@
+<!-- tmpl_include name="header.tmpl"  -->
+
+<main>
+
+<p>
+Updating <strong><!-- tmpl_var name="name" -->'s</strong> settings.
+</p>
+
+<p>
+<form action="/updatesettings" method="post">
+
+<p>
+old email : <input type="text" id="old_email" name="old_email" maxlength="50" value="<!-- tmpl_var name="old_email" -->" />
+</p>
+
+<p>
+new email : <input type="text" id="new_email" name="new_email" maxlength="50" value="<!-- tmpl_var name="new_email" -->" />
+</p>
+
+<p>
+<label for="blank"> </label>
+<input class="submitbutton" id="submit" type="submit" value="Update" />
+</p> 
+<input type="hidden" name="rev" value="<!-- tmpl_var name="rev" -->" />
+<input type="hidden" name="id"  value="<!-- tmpl_var name="id" -->" />
+
+</form>
+</p>
+
+</main>
+
+<!-- tmpl_include name="footer.tmpl" -->

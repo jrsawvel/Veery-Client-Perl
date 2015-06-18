@@ -1,0 +1,11 @@
+<!-- tmpl_include name="header.tmpl" -->
+<main>
+<!-- tmpl_loop name="deleted_loop" -->
+<article class="post">
+<span class="greytext"><a href="/undelete/<!-- tmpl_var name="slug" -->">undelete</a></span>
+ - 
+ <a href="/<!-- tmpl_var name="slug" -->"><!-- tmpl_var name="title" --></a> - <small><em><!-- tmpl_var name="post_type" --></em></small>
+</article>
+<!-- /tmpl_loop -->
+</main>
+<!-- tmpl_include name="footer.tmpl" -->

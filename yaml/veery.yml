@@ -1,0 +1,17 @@
+---
+    template_home:                  /home/veery/Veery-Client-Perl/tmpl
+    site_name:                      Veery
+    app_name:                       Veery v1.0
+    home_page:                      http://veeryclientperl.soupmode.com
+    site_description:               MemEx App
+    domain_name:                    veeryclientperl.soupmode.com
+    css_dir_url:                    http://veeryclientperl.soupmode.com/css 
+    maincss_url:                    http://veeryclientperl.soupmode.com/css/veery.css
+    api_url:                        http://veeryapiperl.soupmode.com/api
+    cookie_prefix:                  veery 
+    debug_mode:                     1
+    author_name:                    JohnR
+    author_profile:                 profile
+    memcached_port:                 11211
+    write_html_to_memcached:        1
+#    write_html_to_redis:            1

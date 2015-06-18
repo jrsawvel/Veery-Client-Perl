@@ -1,0 +1,377 @@
+@import url(normalize.css); 
+
+html {
+    height: 100%;
+    max-height: 100%;
+}
+
+body {
+    height: 100%;
+    max-height: 100%;
+    color: #000000;
+    background: #ffffff;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif; 
+    font-size: 100%;   /* ~16px */ /* this is defined in the text resizer css file */
+    line-height: 1.5em;
+    width: 100%;
+}  
+
+textarea {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;  
+    font-size: 1em;
+    overflow: auto;
+    background: #ffffff;
+    border: 1px solid #ccc; 
+}
+
+blockquote.highlighted {
+    margin-left: .6em;
+    padding-left: 1em;
+    border-left: .1em solid #666;
+    background: #f5faff;
+}
+
+hr.shortgrey {
+   border: 0; 
+   height: 1px; 
+   background: #ddd;
+   width: 25%;
+   margin-top:2em;
+   margin-bottom:2em;
+}
+
+a {
+    color: #0000ff;
+    text-decoration: underline; 
+}
+
+a:visited {
+    color: #cc3399;
+    text-decoration: underline; 
+} 
+
+a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline; 
+    color: #ff0000;
+}
+
+/*
+header {
+    text-align: left;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 100; 
+    float: left;
+    width: 100%;
+    left: auto;
+    position: absolute;
+    height: 20px;
+}
+*/
+
+header {
+    font-size: 90%;
+}
+
+header a {
+    color: #666666;
+    text-decoration: none;
+}
+
+header a:visited {
+    color: #666666;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+
+nav ul {
+    margin: 5px; 
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; 
+    margin: 0; /* margin: 5px; */
+}
+
+main {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 0px auto 0px;
+}
+
+article .stream-content {
+    color: #222; font-size: 1.1em; 
+color: #333;
+}
+
+article .article-body {
+    line-height: 1.7em;
+    color: #333;font-size: 1.33em;
+    color: #222;font-size: 1.2em; 
+color: #333;
+}
+
+article p {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+article ul > li {
+    padding: 4px; /* Add some spacing around the content */
+}
+
+article .article-body.strong {
+    color: #000000;
+}
+
+article b {
+    background: #ffff00;
+    font-weight: normal;
+}
+
+/* for highlighting pull quotes */
+article center big em {
+    color: #555555;
+}
+
+article center em big {
+    color: #555555;
+}
+
+.article-body code {
+    font-size:13px;
+    background: #f8f8f8;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid #dddddd;
+}
+
+.article-body pre {
+    line-height: 1em; 
+    background: #f8f8f8;
+padding: 2px 5px 2px 5px;
+border: 1px solid #dddddd;
+}
+
+.article-body pre code {
+    padding:0;
+    border:none;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #000000;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;  
+}
+
+h1 {
+/*
+    padding: 0;
+    margin: 0 0 40px 0;
+*/
+    margin: 0;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5em; 
+}
+
+h3 {
+    font-size: 1.4em; 
+}
+
+h4 {
+    font-size: 1.3em; 
+}
+
+h5 {
+    font-size: 1.2em; 
+    margin:40px 0 0 0;
+    padding:0;
+}
+
+h2, h3, h4 {
+    /* margin: 50px 0 10px 0; */
+    margin: 60px 0 40px 0;
+    padding: 0;
+}
+
+/* heading text - used for the h1, h2, h3, etc tags */
+.headingtext a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.headingtext a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.headingtext a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.edit-link {
+    float: right; 
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.post-min-read {
+    float:right; 
+    font-size:70%; 
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+
+.olderlink {
+    float: right;
+}
+
+.sitewide-footer {
+    clear: right;
+    clear: left;
+    /* font-size: .9em; */
+   /* text-align: center; */
+    padding-bottom: 25px;
+}
+
+/* g. small, grey-colored text links */
+.greytext {
+    font-size: 90%;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif; 
+}
+
+.greytext a {
+    color: #888888;
+    text-decoration: none;
+}
+
+.greytext a:visited {
+    color: #888888;
+    text-decoration: none;
+}
+
+.greytext a:hover {
+    color: #000000; 
+    text-decoration: underline;
+}
+
+.photo-caption {
+    font-size:80%;
+    line-height:110%;
+}
+
+#textareaboxpost {
+    width: 90%
+    height: 250px;
+}
+
+.box {
+    border: 1px solid #000; 
+    padding: 10px;
+/*    margin-bottom: 40px; */
+}
+
+.streamtitle a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.streamtitle a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.submitbutton {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; 
+    font-size: 1em;
+    color: #666;
+    background: #fff;
+    border: 1px solid #b8b8b8;
+}
+
+.submitbutton:hover {
+    color: #000;
+    border: 1px solid #222;
+}
+
+
+/* 37.5em = 600px */
+@media only screen and (max-width: 37.5em) {
+    h1 {
+        font-size: 1.40em;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 1.30em; 
+        /* padding-top: .2em; */
+    }
+
+    h3 {
+        font-size: 1.20em; 
+    }
+
+    h4 {
+        font-size: 1.15em; 
+    }
+
+    h5 {
+        font-size: 1.10em; 
+    }
+
+    .site-description, .homepage-min-read,  .homepage-tagstring, .post-min-read {
+        display: none; 
+    }
+
+    #microblogtextareabox {
+        width: 95%;
+    }   
+
+}
+
+@media only screen and (min-width: 320px) { 
+    #textareaboxpost {
+        width: 95%;
+        height: 125px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #textareaboxpost {
+        width: 90%;
+        height: 200px;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #textareaboxpost {
+        width: 90%;
+        height: 250px;
+        height: 450px;
+    }
+}
+
+
