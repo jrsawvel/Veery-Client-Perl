@@ -47,6 +47,7 @@ sub show_post {
         $t->set_template_variable("word_count",      $post->{'word_count'});
         $t->set_template_variable("post_type",       $post->{'post_type'});
         $t->set_template_variable("slug",            $post->{'slug'});
+        $t->set_template_variable("title",           $post->{'title'});
         $t->set_template_variable("author_profile",  Config::get_value_for("author_profile"));
 
         if ( $post->{'created_at'} ne $post->{'updated_at'} ) {

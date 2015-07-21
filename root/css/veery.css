@@ -294,6 +294,7 @@ h2, h3, h4 {
     color: #000000;
     text-decoration: none;
     font-weight: bold; 
+    font-size: 1.1em;
 }
 
 .streamtitle a:hover {
