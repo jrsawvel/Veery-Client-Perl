@@ -26,10 +26,16 @@ sub __create_rss {
 
         $hash{posttext} = $hash_ref->{text_intro};
 
-        if ( $hash_ref->{text_intro} =~ m{^\s*<span class="streamtitle"><a href="(.*?)">(.*?)</a></span> -\s*(.*?)$}m ) {
-            $hash{title}    = encode_entities($2);
-            $hash{posttext} = $3;
-        } else {
+
+#        if ( $hash_ref->{text_intro} =~ m{^\s*<span class="streamtitle"><a href="(.*?)">(.*?)</a></span> -\s*(.*?)$}m ) {
+#            $hash{title}    = encode_entities($2);
+#            $hash{posttext} = $3;
+#        } else {
+#            $hash{title} = $hash_ref->{slug};
+#        }
+
+        $hash{title} = $hash_ref->{title}; 
+        if ( $hash_ref->{post_type} eq "note" ) {
             $hash{title} = $hash_ref->{slug};
         }
 

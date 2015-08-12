@@ -17,10 +17,12 @@
 <!-- tmpl_var name="reading_time" --> min
 </div>
 <!-- /tmpl_if -->
+<!-- tmpl_if show_title -->
 <hgroup>
-<!-- <h1><!-- tmpl_var name="title" --></h1> -->
+<h1 class="headingtext"><a href="/<!-- tmpl_var name="slug" -->"><!-- tmpl_var name="title" --></a></h1> 
 <!-- <h2>sub title will be here</h2> -->
 </hgroup>
+<!-- /tmpl_if -->
 </header>
 
 <section class="article-body">

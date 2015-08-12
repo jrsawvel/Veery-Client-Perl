@@ -76,7 +76,7 @@ header {
 */
 
 header {
-    font-size: 90%;
+    /* font-size: 90%; */
 }
 
 header a {
@@ -92,6 +92,10 @@ header a:visited {
 header a:hover {
     color: #666666;
     text-decoration: underline;
+}
+
+hgroup {
+    font-size: 1.2em; 
 }
 
 nav ul {
@@ -113,14 +117,12 @@ main {
 
 article .stream-content {
     color: #222; font-size: 1.1em; 
-color: #333;
 }
 
 article .article-body {
     line-height: 1.7em;
     color: #333;font-size: 1.33em;
     color: #222;font-size: 1.2em; 
-color: #333;
 }
 
 article p {
@@ -129,6 +131,10 @@ article p {
 }
 
 article ul > li {
+    padding: 4px; /* Add some spacing around the content */
+}
+
+article ol > li {
     padding: 4px; /* Add some spacing around the content */
 }
 
@@ -160,13 +166,13 @@ article center em big {
 .article-body pre {
     line-height: 1em; 
     background: #f8f8f8;
-padding: 2px 5px 2px 5px;
-border: 1px solid #dddddd;
+    padding: 2px 5px 2px 5px;
+    /* border: 1px solid #dddddd; */ /* why have a border here? commented out on 3aug2015 */
 }
 
 .article-body pre code {
-    padding:0;
-    border:none;
+    padding: 0;
+    border: none;
 }
 
 img {
@@ -211,6 +217,33 @@ h2, h3, h4 {
     margin: 60px 0 40px 0;
     padding: 0;
 }
+
+.codeClass pre {
+    white-space: pre;
+}
+
+.fenceClass pre {
+    white-space: pre;
+}
+
+ /*  http://stackoverflow.com/questions/2295766/how-to-create-a-scrollable-div-tag-vertically-supported-in-chrome */
+.codeClass {
+    width: 100%;
+    overflow-y: scroll;
+    max-height:500px; 
+    background: #f8f8f8;
+    border: 1px solid #dddddd;
+    padding: 2px 5px 2px 5px;
+    white-space: nowrap;
+}
+
+.fenceClass {
+    overflow-x: scroll;
+    background: #f8f8f8;
+    border: 1px solid #dddddd;
+    padding: 2px 5px 2px 5px;
+}
+
 
 /* heading text - used for the h1, h2, h3, etc tags */
 .headingtext a {

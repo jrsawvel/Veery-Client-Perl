@@ -38,7 +38,11 @@
 <p>
 <section class="stream-content">
 <!-- <!-- tmpl_var name="post_type" --> -->
-<!-- <!-- tmpl_var name="title" --> -->
+
+<!-- tmpl_if show_title -->
+<span class="streamtitle"><a href="/<!-- tmpl_var name="slug" -->"><!-- tmpl_var name="title" --></a></span> -  
+<!-- /tmpl_if -->
+
 <!-- tmpl_var name="text_intro" -->
 <!-- tmpl_if more_text_exists -->
 <a href="/<!-- tmpl_var name="slug" -->"><strong>more&gt;&gt;</strong></a>

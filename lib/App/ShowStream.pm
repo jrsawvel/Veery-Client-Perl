@@ -60,6 +60,10 @@ sub show_stream {
 # todo remove this code block. this should be done on the API side at create/update article time.
     my $ctr=0;
     foreach my $hash_ref ( @$stream ) {
+        if ( $hash_ref->{'post_type'} eq "article" ) {
+            $hash_ref->{'show_title'} = 1;
+        }
+
         my $tags = $hash_ref->{'tags'};
         if ( $tags->[0] ) {
             my $tag_list = "";
@@ -68,6 +72,7 @@ sub show_stream {
             }
 
             $hash_ref->{'tag_list'} = $tag_list;
+
         }
         delete($hash_ref->{'tags'});
         push(@posts, $hash_ref);

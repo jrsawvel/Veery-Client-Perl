@@ -50,6 +50,10 @@ sub show_post {
         $t->set_template_variable("title",           $post->{'title'});
         $t->set_template_variable("author_profile",  Config::get_value_for("author_profile"));
 
+        if ( $post->{'post_type'} eq "article" ) {
+            $t->set_template_variable("show_title", 1);
+        }
+
         if ( $post->{'created_at'} ne $post->{'updated_at'} ) {
             $t->set_template_variable("modified", 1);
         }
