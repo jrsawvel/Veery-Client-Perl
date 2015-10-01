@@ -2,9 +2,9 @@
 
 use strict;
 
-#use lib '/home/';
+use lib '../lib';
 
-use Config::Config;
+use App::Config;
 use Cache::Memcached::libmemcached;
 
 my $port        = Config::get_value_for("memcached_port");

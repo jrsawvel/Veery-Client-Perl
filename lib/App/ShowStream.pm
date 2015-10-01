@@ -57,7 +57,9 @@ sub show_stream {
 
     my @posts;
 
-# todo remove this code block. this should be done on the API side at create/update article time.
+# ??? todo remove this code block. should this be done on the API side at create/update article time?
+# if yes, then the html-based tag list string would be another key-value store in the doc.
+
     my $ctr=0;
     foreach my $hash_ref ( @$stream ) {
         if ( $hash_ref->{'post_type'} eq "article" ) {
@@ -104,7 +106,7 @@ sub show_stream {
     $t->set_template_variable("previous_page_url", $previous_page_url);
 
     if ( $page_num == 1 and !User::get_logged_in_flag() and Config::get_value_for("write_html_to_memcached") ) {
-        CacheHtml::cache_page($t->create_html("Stream of Posts", "homepage"));
+        CacheHtml::cache_page($t->create_html("Stream of Posts"), "homepage");
     } elsif ( $creation_type eq "private" ) {
        return $t->create_html("Stream of Posts");
     }
@@ -125,13 +127,13 @@ sub tag_search {
 
     my $max_entries = Config::get_value_for("max_entries_on_page");
 
-    my $query_string = "/";
+    my $query_string = "";
 
     my $page_num = 1;
     if ( Utils::is_numeric($tmp_hash->{two}) ) {
         $page_num = $tmp_hash->{two};
         if ( $page_num > 1 ) {
-            $query_string .= "?page=$page_num";
+            $query_string .= "/?page=$page_num";
         }
     } 
 
@@ -165,9 +167,14 @@ sub tag_search {
 
     my @posts;
 
-# todo remove this code block. this should be done on the API side at create/update article time.
+# ??? todo remove this code block. should this be done on the API side at create/update article time?
+# if yes, then the html-based tag list string would be another key-value store in the doc.
     my $ctr=0;
     foreach my $hash_ref ( @$stream ) {
+        if ( $hash_ref->{'post_type'} eq "article" ) {
+            $hash_ref->{'show_title'} = 1;
+        }
+
         my $tags = $hash_ref->{'tags'};
         if ( $tags->[0] ) {
             my $tag_list = "";
@@ -240,13 +247,13 @@ sub string_search {
 
     my $max_entries = Config::get_value_for("max_entries_on_page");
 
-    my $query_string = "/";
+    my $query_string = "";
 
     my $page_num = 1;
     if ( Utils::is_numeric($tmp_hash->{two}) ) {
         $page_num = $tmp_hash->{two};
         if ( $page_num > 1 ) {
-            $query_string .= "?page=$page_num";
+            $query_string .= "/?page=$page_num";
         }
     } 
 
@@ -285,9 +292,14 @@ sub string_search {
 
     my @posts;
 
-# todo remove this code block. this should be done on the API side at create/update article time.
+# ??? todo remove this code block. should this be done on the API side at create/update article time?
+# if yes, then the html-based tag list string would be another key-value store in the doc.
     my $ctr=0;
     foreach my $hash_ref ( @$stream ) {
+        if ( $hash_ref->{'post_type'} eq "article" ) {
+            $hash_ref->{'show_title'} = 1;
+        }
+
         my $tags = $hash_ref->{'tags'};
         if ( $tags->[0] ) {
             my $tag_list = "";

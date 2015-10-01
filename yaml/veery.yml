@@ -9,6 +9,7 @@
     maincss_url:                    http://veeryclientperl.soupmode.com/css/veery.css
     api_url:                        http://veeryapiperl.soupmode.com/api
     cookie_prefix:                  veery 
+    memcached_prefix:               veery-client 
     debug_mode:                     1
     author_name:                    JohnR
     author_profile:                 profile

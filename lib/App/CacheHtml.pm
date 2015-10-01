@@ -16,7 +16,7 @@ sub cache_page {
     my $post_id = shift;
 
     my $key;
-    my $hashname =  Config::get_value_for("domain_name");
+    my $hashname =  Config::get_value_for("memcached_prefix");
     my $port     = Config::get_value_for("memcached_port");
 
     $key  = $hashname . "-" . $post_id;
